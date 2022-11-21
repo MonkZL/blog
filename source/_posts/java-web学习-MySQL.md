@@ -109,6 +109,7 @@ select 字段名称 from 表名 where 条件列表 group by 分支字段 having 
 + select min(id) from user; // 最小，列不为null都会纳入计算
 + select sum(id) from user; // 总和，列不为null都会纳入计算
 + select avg(id) from user; // 平均，列不为null都会纳入计算
++ todo 其他函数
 
 ##### 分组查询
 + select sex, avg(math) from user group by sex; // 查询不同性别数学的平均分
@@ -121,6 +122,7 @@ select 字段名称 from 表名 where 条件列表 group by 分支字段 having 
 + select * from user limit 3; // 从第一个开始 查3个数
 
 #### DCL（Data Control Language）数据控制语言 对数据进行权限控制
+todo
 
 
 ### 约束
