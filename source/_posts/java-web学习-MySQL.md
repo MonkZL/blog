@@ -123,3 +123,49 @@ select 字段名称 from 表名 where 条件列表 group by 分支字段 having 
 #### DCL（Data Control Language）数据控制语言 对数据进行权限控制
 
 
+### 约束
+
+#### 概念
++ 约束是作用与列上的规则，用于限制加入表的数据
++ 约束的存在保证了数据库中数据的正确性，有效性和完整性
+
+#### 约束的分类
++ 非空约束（NOT NULL）
++ 唯一约束（UNIQUE）
++ 主键约束（PRIMARY KEY）
++ 检查约束（CHECK）// mysql不支持该项
++ 默认约束（DEFAULT）
+
+```
+create table user (
+  id INT PRIMARY KEY auto_increment, // 主键
+  ename VARCHAR(10) NOT NULL UNIQUE, // 非空 唯一
+  joindata DATA NOT NULL,
+  salary DOUBLE(7,2) NOT NULL,
+  bonus DOUBLE(7,2) DEFAULT 0 // 默认
+);
+```
+
++ 外键约束（FOREIGN KEY）
+```
+// 部门表
+create table dep(
+  id INT PRIMARY KEY auto_increment,
+  name varchar(20)
+);
+// 员工表
+create table emp(
+  id INT PRIMARY KEY auto_increment,
+  name varchar(20),
+  dep_id int,
+  constraint fk_emp_dep foreign key(dep_id) references dep(id) // 创建外键
+);
+将员工表的dep_id和部门表的id相关联
+以后插入新员工的时候，dep_id必须是部门表已有的id
+删除部门表的数据时，改部门表的id没有在员工表的dep_id中出现过
+```
+
+
+
+
+
