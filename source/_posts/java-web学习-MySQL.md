@@ -149,6 +149,7 @@ create table user (
 ```
 
 + 外键约束（FOREIGN KEY）
+
 ```
 // 部门表
 create table dep(
