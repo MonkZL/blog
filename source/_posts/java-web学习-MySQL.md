@@ -168,7 +168,61 @@ create table emp(
 删除部门表的数据时，该部门表的id没有在员工表的dep_id中出现过
 ```
 
+### 数据库设计
 
+#### 一对多
+```
+// 部门表
+create table dep(
+  id INT PRIMARY KEY auto_increment,
+  name varchar(20)
+);
+// 员工表
+create table emp(
+  id INT PRIMARY KEY auto_increment,
+  name varchar(20),
+  dep_id int,
+  constraint fk_dep_id foreign key(dep_id) references dep(id) // 创建外键
+);
+```
+
+#### 多对多
+```
+// 商品表
+create table tb_goods(
+  id INT PRIMARY KEY auto_increment,
+);
+// 订单表
+create table tb_order(
+  id INT PRIMARY KEY auto_increment,
+);
+// 商品和订单的中间表
+create table tb_goods_order(
+  goods_id INT,
+  order_id INT,
+  count INT,
+  constraint fk_goods_id foreign key(goods_id) references tb_goods(id),
+  constraint fk_order_id foreign key(order_id) references tb_order(id)
+);
+```
+
+#### 一对一
+```
+// 用户表
+create table tb_user(
+  id INT PRIMARY KEY auto_increment,
+  name varchar(10),
+  detail_id INT UNIQUE,
+  constraint fk_detail_id foreign key(detail_id) references tb_user_detail(id)
+);
+// 用户详情表
+create table tb_user_detail(
+  id INT PRIMARY KEY auto_increment,
+  address varchar(20)
+)  
+```
+
+### 多表查询
 
 
 
