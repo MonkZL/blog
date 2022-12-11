@@ -2,6 +2,7 @@
 title: java-web学习 MyBatis
 date: 2022-12-11 19:25:43
 tags: MyBatis
+categories: java-web
 ---
 
 # 简介
