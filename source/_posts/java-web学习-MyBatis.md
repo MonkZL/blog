@@ -52,6 +52,7 @@ tags: MyBatis
 # 使用
 
 + 创建`User.java`
+
 ```
 package com.mybatis.pojo;
 
@@ -127,6 +128,7 @@ public class User {
 ```
 
 + 创建`UserMapper.java`
+
 ```
 package com.mybatis.mapper;
 
@@ -159,6 +161,7 @@ public interface UserMapper {
 ```
 
 + 创建`UserMapper.xml`
+
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
@@ -230,6 +233,7 @@ public interface UserMapper {
 ```
 
 + 使用`UserMapper.java`的方法
+
 ```
 package com.mybatis.test;
 
